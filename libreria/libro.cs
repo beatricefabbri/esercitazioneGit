@@ -24,6 +24,7 @@ namespace libreria
             this.numeroDiPagine = numeroDiPagine;
         }
 
+        //metodo reading time
         static int readingTime(int numeroDiPagine)
         {
             int tempo = 0;
@@ -54,5 +55,6 @@ namespace libreria
 
             return stringaDiDati;
         }
+
     }
 }
