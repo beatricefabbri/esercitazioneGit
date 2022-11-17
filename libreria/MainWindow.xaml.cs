@@ -23,11 +23,42 @@ namespace libreria
         public MainWindow()
         {
             InitializeComponent();
+            
         }
-        
+        static int numeroLibri = 0;
+        List<libro> listaLibri = new List<libro>();
         private void btnAggiungiLibro_Click(object sender, RoutedEventArgs e)
         {
+            int valoreAnno= int.Parse(txtAnno.Text);
+            int valoreNumeroPagine=int.Parse(txtNumeroPagine.Text);
+            libro LibroDaAggiungere = new libro(txtAutore.Text, txtTitolo.Text, valoreAnno, txtEditor.Text, valoreNumeroPagine);
+            numeroLibri++;
+            lblNumeroLibri.Content = "libri presenti: " + numeroLibri;
             
+            listaLibri.Add(LibroDaAggiungere);
+
+        }
+
+        private void btnCercaLibro_Click(object sender, RoutedEventArgs e)
+        {
+            for(int i = 0; i < listaLibri.Count; i++)
+            {
+                if (listaLibri[i].titolo == txtLibroDaCercare.Text)
+                {
+                    lblLibroTrovato.Content = listaLibri[i].titolo;
+                }
+            }
+        }
+
+        private void btnCercaAutore_Click(object sender, RoutedEventArgs e)
+        {
+            for (int i = 0; i < listaLibri.Count; i++)
+            {
+                if (listaLibri[i].autore == txtAutore.Text)
+                {
+                    lblLibriAutore.Items.Add(listaLibri[i].autore);
+                }
+            }
         }
     }
 }
