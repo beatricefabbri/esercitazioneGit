@@ -38,7 +38,7 @@ namespace libreria
             listaLibri.Add(LibroDaAggiungere);
 
         }
-
+//commento aggiunto da gitHub
         private void btnCercaLibro_Click(object sender, RoutedEventArgs e)
         {
             for(int i = 0; i < listaLibri.Count; i++)
